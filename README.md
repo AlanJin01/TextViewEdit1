@@ -98,3 +98,29 @@
         }, completion: nil)
     }
 
+通过手势来呼唤键盘
+----
+     //MARK: -
+    //点击textView时调用
+    @objc func tapGesture1(_ tap: UITapGestureRecognizer) {
+        //当点击textView区域时
+        if tap.view == textView {
+            if isTap == true && textView2.isFirstResponder {
+                textView2.isEditable = false  //禁止可编辑模式
+                textView2.resignFirstResponder()  //撤掉textView2第一响应者, 以便收回键盘
+                isTap = false
+            }
+        }
+    }
+
+    //点击textView2时调用
+    @objc func tapGesture2(_ tap: UITapGestureRecognizer) {
+        //当点击文本输入框textView2时
+        if tap.view == textView2 {
+            if isTap == false {
+                textView2.isEditable = true  //开启可编辑模式
+                textView2.becomeFirstResponder()  //把textView2变为第一响应者模式，以便弹出键盘
+                isTap = true
+            }
+        }
+    }

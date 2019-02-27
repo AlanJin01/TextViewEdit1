@@ -4,7 +4,7 @@
 ![image](https://github.com/Kimsswift/TextViewEdit1/blob/master/TextViewEdit/t1.gif)
 
 类属性:
-
+---
     //MARK: -
     var sendText: String = ""  //存储textView的文字
     
@@ -21,7 +21,7 @@
     
     
  注册监视器，以及配置手势事件
- 
+ ------
     //键盘弹出监视
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         //键盘收回监视
@@ -42,7 +42,7 @@
 
 
 点击发送按钮时的调用方法:
-
+-------
     //MARK: -
     //点击发送按钮时调用
     @objc func theSendButton() {
@@ -64,7 +64,7 @@
     
     
  弹出/收回键盘时调用的方法:
-    
+ ---  
     //MARK: -
     //键盘即将显现时调用
     @objc func keyboardShow(_ notification: Notification) {
